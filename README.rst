@@ -13,9 +13,9 @@ YAML-based syntax. It's very simple to get started, and highly
 customisable for complex tests.
 
 The best way to use Tavern is with
-`pytest <https://docs.pytest.org/en/latest/>`__. Tavern comes with a
+`pytest <https://docs.pytest.org/en/latest/>`_. Tavern comes with a
 pytest plugin so that literally all you have to do is install pytest and
-Tavern, write your tests in ``.tavern.yaml`` files and run pytest. This
+Tavern, write your tests in ``*.tavern.yaml`` files and run pytest. This
 means you get access to all of the pytest ecosystem and allows you to do
 all sorts of things like regularly run your tests against a test server
 and report failures or generate HTML reports.
@@ -24,16 +24,16 @@ You can also integrate Tavern into your own test framework or continuous
 integration setup using the Python library, or use the command line
 tool, ``tavern-ci`` with bash scripts and cron jobs.
 
-To learn more, check out the `examples <https://taverntesting.github.io/examples>`__ or the complete
-`documentation <https://taverntesting.github.io/documentation>`__. If you're interested in contributing
-to the project take a look at the `GitHub
-repo <https://github.com/taverntesting/tavern>`__.
+To learn more, check out the `examples <https://taverntesting.github.io/examples>`_
+or the complete `documentation <https://taverntesting.github.io/documentation>`_.
+If you're interested in contributing to the project take a look at the `GitHub
+repo <https://github.com/taverntesting/tavern>`_.
 
 Quickstart
 ----------
 
-Note that Tavern **only** supports Python 2.7 and up, and at the time of writing is only
-tested against Python 2.7/3.3-3.6.
+Note that Tavern **only** supports Python 2.7 and up, and at the time of
+writing is only tested against Python 2.7/3.3-3.6.
 
 ::
 
@@ -123,22 +123,25 @@ code-block:: shell
 Developed and maintained by Overlock
 ------------------------------------
 
-Overlock helps developers quickly find and fix bugs in distributed systems such as IoT deployments by gathering together exception information from end devices, gateways or servers. We’re currently in beta - find out more at `overlock.io <https://overlock.io>`__.
+Overlock helps developers quickly find and fix bugs in distributed systems
+such as IoT deployments by gathering together exception information from end
+devices, gateways or servers. We’re currently in beta - find out more at
+`overlock.io <https://overlock.io>`_.
 
 Acknowledgements
 ----------------
 
 Tavern makes use of several excellent open-source projects:
 
--  `pytest <https://docs.pytest.org/en/latest/>`__, the testing
+-  `pytest <https://docs.pytest.org/en/latest/>`_, the testing
    framework Tavern intergrates with
--  `requests <http://docs.python-requests.org/en/master/>`__, for HTTP
+-  `requests <http://docs.python-requests.org/en/master/>`_, for HTTP
    requests
--  `YAML <http://yaml.org/>`__ and
-   `pyyaml <https://github.com/yaml/pyyaml>`__, for the test syntax
--  `pykwalify <https://github.com/Grokzen/pykwalify>`__, for YAML schema
+-  `YAML <http://yaml.org/>`_ and
+   `pyyaml <https://github.com/yaml/pyyaml>`_, for the test syntax
+-  `pykwalify <https://github.com/Grokzen/pykwalify>`_, for YAML schema
    validation
--  `pyjwt <https://github.com/jpadilla/pyjwt>`__, for decoding JSON Web
+-  `pyjwt <https://github.com/jpadilla/pyjwt>`_, for decoding JSON Web
    Tokens
--  `colorlog <https://github.com/borntyping/python-colorlog>`__, for
+-  `colorlog <https://github.com/borntyping/python-colorlog>`_, for
    formatting terminal outputs
