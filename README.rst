@@ -102,6 +102,24 @@ to a better developer experience:
 -  Validation function are more flexible and easier to use
 -  Better explanations of why a test failed
 
+
+Contributing
+------------
+
+Setting up a virtual environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Assuming, you have created and activated a fresh `virtual environment`_:
+
+code-block:: shell
+
+    $ pip install -e .
+    $ pip install requirements-dev.txt
+
+
+.. _virtual environment: https://docs.python.org/glossary.html#term-virtual-environment
+
+
 Developed and maintained by Overlock
 ------------------------------------
 
