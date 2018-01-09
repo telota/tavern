@@ -1,54 +1,11 @@
 import logging
-import argparse
-from argparse import ArgumentParser #, ArgumentTypeError
 
-from .core import run
-
-
-class TavernArgParser(ArgumentParser):
-
-    def __init__(self):
-        super(TavernArgParser, self).__init__(
-            description="""Parse yaml + make requests against an API""",
-            formatter_class=argparse.RawDescriptionHelpFormatter,
-        )
-
-        self.add_argument(
-            "in_file",
-            help="Input file with tests in",
-        )
-
-        self.add_argument(
-            "--tavern-global-cfg",
-            required=False,
-            help="Global configuration file to include in every test",
-        )
-
-        self.add_argument(
-            "--log-to-file",
-            help="Log output to a file (tavern.log if no argument is given)",
-            nargs="?",
-            const="tavern.log",
-        )
-
-        self.add_argument(
-            "--stdout",
-            help="Log output stdout",
-            action="store_true",
-            default=False,
-        )
-
-        self.add_argument(
-            "--debug",
-            help="Log debug information (only relevant if --stdout or --log-to-file is passed)",
-            action="store_true",
-            default=False,
-        )
+from tavern.config import get_config
+from tavern.core import run
 
 
 def main():
-    args = TavernArgParser().parse_args()
-    vargs = vars(args)
+    vargs = get_config()
 
     if vargs.pop("debug"):
         log_level = "DEBUG"
@@ -98,4 +55,4 @@ def main():
 
     logging.config.dictConfig(log_cfg)
 
-    exit(not run(**vargs))
+    exit(not run(vargs['infile'], vargs['global_vars']))

@@ -85,7 +85,7 @@ def run_test(in_file, test_spec, global_cfg):
             test_block_config["variables"].update(saved)
 
 
-def run(in_file, tavern_global_cfg):
+def run(in_file, global_vars):
     """Run all tests contained in a file
 
     For each test this makes sure it matches the expected schema, then runs it.
@@ -94,19 +94,13 @@ def run(in_file, tavern_global_cfg):
 
     Args:
         in_file (str): file to run tests on
-        tavern_global_cfg (str): file containing Global config for all tests
+        global_vars (dict): the global variables
 
     Returns:
         bool: Whether ALL tests passed or not
     """
 
     passed = True
-
-    if tavern_global_cfg:
-        with open(tavern_global_cfg, "r") as gfileobj:
-            global_cfg = yaml.load(gfileobj)
-    else:
-        global_cfg = {}
 
     with open(in_file, "r") as infile:
         # Multiple documents per file => multiple test paths per file
@@ -118,7 +112,7 @@ def run(in_file, tavern_global_cfg):
                 continue
 
             try:
-                run_test(in_file, test_spec, global_cfg)
+                run_test(in_file, test_spec, global_vars)
             except exceptions.TestFailError:
                 passed = False
                 continue
